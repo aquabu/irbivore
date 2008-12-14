@@ -15,7 +15,7 @@
 #
 
 require 'rubygems'
-require 'midiator'
+require 'midiator.rb'
 
 midi = MIDIator::Interface.new
 midi.autodetect_driver
