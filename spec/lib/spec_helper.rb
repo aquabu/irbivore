@@ -16,6 +16,4 @@
 require 'rubygems'
 require 'spec'
 
-$: << File.expand_path( File.join( File.dirname(__FILE__), '..', '..', 'lib' ) )
-
-require 'midiator'
+require File.expand_path(File.dirname(__FILE__)) + '/../../irbalist.rb'
