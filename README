@@ -10,6 +10,16 @@ Gratefully borrowed MIT licensed code from:
 * Jermey Voorhis (Gamelan Scheduler)
 * Topher Cyll -- http://www.cyll.org
 
+== Included Libraries
+
+MIDIator
+Gamelan
+
+== Gem Dependencies
+
+PriorityQueue
+Highline
+
 == License
 
 Distributed under the terms of the MIT license.  See the LICENSE file for
