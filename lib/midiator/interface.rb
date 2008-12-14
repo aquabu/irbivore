@@ -77,7 +77,7 @@ class MIDIator::Interface
 
 	### A little shortcut method for playing the given +note+ for the specified
 	### +duration+.
-	def play( note, duration = 0.1, channel = 0, velocity = 100 )
+	def play( note, duration = 0.1, channel = 1, velocity = 100 )
 		@driver.note_on( note, channel, velocity )
 		sleep duration
 		@driver.note_off( note, channel, velocity )
