@@ -1,2 +1,4 @@
 $: << File.expand_path(File.dirname(__FILE__)) + '/irbalist'
-require 'livecoding'
+module Irbalist; end
+require 'irbalist/pattern'
+require 'irbalist/livecoding'
