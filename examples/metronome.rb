@@ -45,7 +45,7 @@ require 'rubygems'
 ### M I D I A T O R   S E T U P
 ########################################################################
 
-require '../irbalist.rb'
+require '../init.rb'
 include MIDIator::Notes
 
 @midi = MIDIator::Interface.new

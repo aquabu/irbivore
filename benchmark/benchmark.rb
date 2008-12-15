@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-$:.unshift File.join(File.dirname(__FILE__), '../lib')
-require 'gamelan'
+require File.expand_path(File.dirname(__FILE__)) + '/../init.rb'
 
 samples   = []
 scheduler = Gamelan::Scheduler.new(:tempo => 60)

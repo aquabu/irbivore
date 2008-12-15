@@ -7,6 +7,7 @@
 $: << File.expand_path(File.dirname(__FILE__)) + '/gamelan'
 require 'scheduler'
 require 'task'
+require 'queue'
 
 class Object # :nodoc:
   unless methods.include?('instance_exec')

@@ -16,4 +16,4 @@
 require 'rubygems'
 require 'spec'
 
-require File.expand_path(File.dirname(__FILE__)) + '/../../irbalist.rb'
+require File.expand_path(File.dirname(__FILE__)) + '/../../init.rb'
