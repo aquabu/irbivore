@@ -1,5 +1,5 @@
 # Irb command line methods
-module Irbalist::Livecoding
+module Irbavore::Livecoding
   require "highline/system_extensions"
   include HighLine::SystemExtensions
 

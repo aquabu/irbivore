@@ -1,6 +1,6 @@
-require 'irbalist.rb'
+require 'init.rb'
 require 'irb/completion'
 include MIDIator::Notes
-include Irbalist::Livecoding
-include Irbalist::Patterns
-setup #run the livecoding setup method to get midi connectivity
+include Irbavore::Livecoding
+include Irbavore::Patterns
+setup # initialize MIDIator::Notes MIDI connection 
