@@ -21,7 +21,7 @@ require 'rake/gempackagetask'
 ### Task: gem
 gemspec = Gem::Specification.new do |gem|
   gem.name      = "midiator"
-  gem.version   = MIDIator::VERSION
+  gem.version   = "" #MIDIator::VERSION
 
   gem.summary     = "MIDIator - A a nice Ruby interface to your system's MIDI services."
   gem.description = "MIDIator provides an OS-agnostic way to send live MIDI messages to " +
