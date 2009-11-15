@@ -2,6 +2,12 @@
 
 A musical livecoding front end using IRB to control MIDI messages. This is a hack in progress. 
 
+To use. 
+- cd to the root level irbavore directory
+- type irb to launch irb with the .irbrc file in the root level directory
+- to play middle c (MIDI note 60) type: p 60
+- to enter into note playing mode type: a
+
 == Authors
 * Noah Thorp - http://www.aquabu.com
 

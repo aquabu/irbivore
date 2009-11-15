@@ -17,7 +17,7 @@ module Irbavore::Livecoding
   # play midi note
   # takes note, duration, channel, velocity
   def p(*args)
-    Thread.new { @midi.play *args }
+    @midi.play *args
   end
 
   # play keyboard like an instrument
@@ -45,8 +45,8 @@ module Irbavore::Livecoding
   ROWA = %w{a s d f g h j k l ; '}
   ROWQ = %w{q w e r t y u i o p [ ] }
   ROW1 = %w{1 2 3 4 5 6 7 8 9 0 - = }
-  ROWGAP = 4 
-  SPACING = 5 
+  ROWGAP = 5 
+  SPACING = 1 
   count = 0
   KEYMAP = [ROWZ, ROWA, ROWQ, ROW1].inject({}) do |h, e|
     this_map = make_keymap(e, SPACING, (36 + (ROWGAP * count)))
