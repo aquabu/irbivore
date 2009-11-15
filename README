@@ -1,6 +1,6 @@
-= IRBALIST 
+h1. Irbavore
 
-A musical livecoding front end using IRB to control MIDI messages. This is a hack in progress. 
+A musical livecoding front end using IRB. This is a hack in progress. 
 
 To use. 
 - cd to the root level irbavore directory
