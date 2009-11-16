@@ -9,7 +9,9 @@ module Irbivore::Livecoding
 
   def setup 
     @midi = MIDIator::Interface.new
-    @midi.autodetect_driver
+    # @midi.autodetect_driver
+    @midi.use :dls_synth
+    @midi.instruct_user!
     @midi.instruct_user!
     @bpm = 120 
   end
