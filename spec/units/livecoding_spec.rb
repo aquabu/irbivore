@@ -38,7 +38,7 @@ describe Irbivore::Livecoding do
     end
   end
 
-  describe "keys" do
+  describe "midiator_keys" do
     before do
       self.should_receive(:print).and_return(true)
       self.should_receive(:escape).and_return(true) #exit the loop after one time through
@@ -51,7 +51,7 @@ describe Irbivore::Livecoding do
 
       it "calls play" do
         self.should_receive(:get_character).and_return(97) # 97 is a lowercase a
-        keys
+        midiator_keys
       end
     end
 
@@ -62,7 +62,7 @@ describe Irbivore::Livecoding do
 
       it "does not call play" do
         self.should_not_receive(:play)
-        keys
+        midiator_keys
       end
     end
   end

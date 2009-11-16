@@ -46,21 +46,23 @@ module Irbivore::Livecoding
   end
 
   # play keyboard like an instrument
-  def keys
+  def midiator_keys
     puts "Play ASCII music. To end type <esc>."
     loop do
-      char = get_character
-      play(KEYMAP[char.chr]) unless skip?(char.chr)
-      print char.chr
+      char = get_character.chr
+      print char
+
+      Thread.new {play(KEYMAP[char])} unless skip?(char) # the threading helps the print display
       return if escape(char)
     end
+
   end
 
   def escape(key)
     key == "\e"
   end
 
-  # skips keys that should not play anything (ie. are not defined)
+  # skips midiator_keys that should not play anything (ie. are not defined)
   def skip?(char)
     !KEYMAP.include? char
   end
