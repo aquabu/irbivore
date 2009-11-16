@@ -14,8 +14,8 @@ module Irbivore::Livecoding
   ROWA = %w{a s d f g h j k l ; '}
   ROWQ = %w{q w e r t y u i o p [ ] }
   ROW1 = %w{1 2 3 4 5 6 7 8 9 0 - = }
-  ROWGAP = 5
-  SPACING = 1
+  ROWGAP = 2
+  SPACING = 4
   count = 0
 
   KEYMAP = [ROWZ, ROWA, ROWQ, ROW1].inject({}) do |h, e|
