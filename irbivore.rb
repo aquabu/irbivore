@@ -3,7 +3,7 @@ require 'rubygems'
 require 'irb'
 require 'irb/completion'
 require 'boson'
-require 'init.rb'
+require File.expand_path(File.dirname(__FILE__)) + '/init.rb'
 # include Irbivore::Livecoding
 Boson.start :libraries => [Irbivore::Livecoding]
 Irbivore::Livecoding.setup
