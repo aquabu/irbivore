@@ -1,9 +1,9 @@
-h1. Irbavore
+h1. Irbivore
 
-A musical livecoding front end using IRB. This is a hack in progress. 
+A musical live coding "front end" using IRB.
 
 To use. 
-- cd to the root level irbavore directory
+- cd to the root level irbivore directory
 - type irb to launch irb with the .irbrc file in the root level directory
 - to play middle c (MIDI note 60) type: p 60
 - to enter into note playing mode type: a

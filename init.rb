@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'midiator'
-IRBAVORE_ROOT = File.expand_path(File.dirname(__FILE__))
+IRBIVORE_ROOT = File.expand_path(File.dirname(__FILE__))
 
 # require all the lib files
-$: << IRBAVORE_ROOT + "/lib"
-Dir.glob(IRBAVORE_ROOT + "/lib/*.rb") do |file|
+$: << IRBIVORE_ROOT + "/lib"
+Dir.glob(IRBIVORE_ROOT + "/lib/*.rb") do |file|
    require file
 end

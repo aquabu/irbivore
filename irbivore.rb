@@ -3,8 +3,8 @@ require 'irb/completion'
 require 'init.rb'
 
 include MIDIator::Notes
-include Irbavore::Livecoding
-include Irbavore::Patterns
+include Irbivore::Livecoding
+include Irbivore::Patterns
 setup # initialize MIDIator::Notes MIDI connection 
 
 IRB.start

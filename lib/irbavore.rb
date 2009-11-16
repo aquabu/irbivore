@@ -1,3 +1,3 @@
-module Irbavore; end
-require 'irbavore/pattern'
-require 'irbavore/livecoding'
+module Irbivore; end
+require 'irbivore/pattern'
+require 'irbivore/livecoding'
