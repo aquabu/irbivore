@@ -1,8 +1,7 @@
 # Irb command line methods
 module Irbivore::Livecoding
   require "highline/system_extensions"
-  include HighLine::SystemExtensions
- 
+
   def self.make_keymap(array, spacing, add = 60)
     keymap = {}
     array.each_with_index do |a, i|
@@ -24,46 +23,44 @@ module Irbivore::Livecoding
     count += 1
     h.merge(this_map)
   end
-
-  def included(base)
-    setup
-  end
-
-  def setup
-    @midi = MIDIator::Interface.new
-    # @midi.autodetect_driver
-    @midi.use :dls_synth
-    @midi.instruct_user!
-    @midi.instruct_user!
-    @bpm = 120
-  end
-
-  # play midi note
-  # takes note, duration, channel, velocity
-  def play(*args)
-    @midi.play *args
-    true
-  end
-
-  # play keyboard like an instrument
-  def midiator_keys
-    puts "Play ASCII music. To end type <esc>."
-    loop do
-      char = get_character.chr
-      print char
-
-      Thread.new {play(KEYMAP[char])} unless skip?(char) # the threading helps the print display
-      return if escape(char)
+  
+  class << self
+    include HighLine::SystemExtensions
+    def setup
+      @midi = MIDIator::Interface.new
+      # @midi.autodetect_driver
+      @midi.use :dls_synth
+      @midi.instruct_user!
+      @midi.instruct_user!
+      @bpm = 120
     end
 
-  end
+    # play midi note
+    # takes note, duration, channel, velocity
+    def play(*args)
+      @midi.play *args
+      true
+    end
 
-  def escape(key)
-    key == "\e"
-  end
+    # play keyboard like an instrument
+    def midiator_keys
+      puts "Play ASCII music. To end type <esc>."
+      loop do
+        char = get_character.chr
+        print char
 
-  # skips midiator_keys that should not play anything (ie. are not defined)
-  def skip?(char)
-    !KEYMAP.include? char
+        Thread.new {play(KEYMAP[char])} unless skip?(char) # the threading helps the print display
+        return if escape(char)
+      end
+    end
+
+    def escape(key)
+      key == "\e"
+    end
+
+    # skips midiator_keys that should not play anything (ie. are not defined)
+    def skip?(char)
+      !KEYMAP.include? char
+    end
   end
 end

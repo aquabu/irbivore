@@ -1,7 +1,5 @@
 require File.join( File.dirname(__FILE__), '..', 'spec_helper.rb' )
 describe Irbivore::Livecoding do
-  include Irbivore::Livecoding
-
   describe "keymap" do
     it "should generate keymaps" do
       hash = {"v"=>42, ","=>50, "m"=>48, "b"=>44, "x"=>38, "."=>52, "n"=>46, "c"=>40, "/"=>54, "z"=>36}
@@ -20,49 +18,50 @@ describe Irbivore::Livecoding do
 
   describe "skip?" do
     it "returns for false for keys in the keymap" do
-      skip?("a").should be_false
+      Irbivore::Livecoding.skip?("a").should be_false
     end
     
     it "returns true for keys that are not in the keymap" do
-      skip?(" ").should be_true
+      Irbivore::Livecoding.skip?(" ").should be_true
     end
   end
 
   describe "escape" do
     it "returns true if it receives the escape key" do
-      escape("\e").should == true
+      Irbivore::Livecoding.escape("\e").should == true
     end
 
     it "returns false if it receives a non escape key" do
-      escape("a").should == false
+      Irbivore::Livecoding.escape("a").should == false
     end
   end
 
   describe "midiator_keys" do
     before do
-      self.should_receive(:print).and_return(true)
-      self.should_receive(:escape).and_return(true) #exit the loop after one time through
+      Irbivore::Livecoding.stub!(:puts).and_return(true)
+      Irbivore::Livecoding.stub!(:print).and_return(true)
+      Irbivore::Livecoding.should_receive(:escape).and_return(true) #exit the loop after one time through
     end
 
     context "with a keymapped character" do
       before do
-        self.should_receive(:play).and_return(true)
+        Irbivore::Livecoding.should_receive(:play).and_return(true)
       end
 
       it "calls play" do
-        self.should_receive(:get_character).and_return(97) # 97 is a lowercase a
-        midiator_keys
+        Irbivore::Livecoding.should_receive(:get_character).and_return(97) # 97 is a lowercase a
+        Irbivore::Livecoding.midiator_keys
       end
     end
 
     context "without a keymapped character" do
       before do
-        self.should_receive(:get_character).and_return(126) # 126 is th ~ (tilda) character
+        Irbivore::Livecoding.should_receive(:get_character).and_return(126) # 126 is th ~ (tilda) character
       end
 
       it "does not call play" do
-        self.should_not_receive(:play)
-        midiator_keys
+        Irbivore::Livecoding.should_not_receive(:play)
+        Irbivore::Livecoding.midiator_keys
       end
     end
   end

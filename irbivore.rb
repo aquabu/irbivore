@@ -1,11 +1,10 @@
 #! /usr/bin/env ruby
+require 'rubygems'
 require 'irb'
 require 'irb/completion'
+require 'boson'
 require 'init.rb'
-
-include MIDIator::Notes
-include Irbivore::Livecoding
-include Irbivore::Patterns
-setup # initialize MIDIator::Notes MIDI connection 
-
+# include Irbivore::Livecoding
+Boson.start :libraries => [Irbivore::Livecoding]
+Irbivore::Livecoding.setup
 IRB.start
