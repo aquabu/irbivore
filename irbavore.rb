@@ -1,6 +1,7 @@
 require 'irb'
-require 'init.rb'
 require 'irb/completion'
+require 'init.rb'
+
 include MIDIator::Notes
 include Irbavore::Livecoding
 include Irbavore::Patterns

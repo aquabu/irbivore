@@ -1,5 +1,6 @@
-require File.join( File.dirname(__FILE__), 'lib', 'spec_helper.rb' )
+require File.join( File.dirname(__FILE__), '..', 'spec_helper.rb' )
 describe Irbavore::Livecoding do
+   
   it "should generate keymaps" do
     hash = {"v"=>42, ","=>50, "m"=>48, "b"=>44, "x"=>38, "."=>52, "n"=>46, "c"=>40, "/"=>54, "z"=>36}
     Irbavore::Livecoding.make_keymap(Irbavore::Livecoding::ROWZ, 2, 36).should == hash
