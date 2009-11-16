@@ -1,3 +1,4 @@
+#! /usr/bin/env ruby
 require 'irb'
 require 'irb/completion'
 require 'init.rb'

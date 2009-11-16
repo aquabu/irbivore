@@ -4,11 +4,11 @@ A musical live coding "front end" using IRB.
 
 To use. 
 - cd to the root level irbivore directory
-- type irb to launch irb with the .irbrc file in the root level directory
+- type irbavore 
 - to play middle c (MIDI note 60) type: p 60
 - to enter into note playing mode type: a
 
-== Authors
+h2. Authors
 * Noah Thorp - http://www.aquabu.com
 
 Gratefully borrowed MIT licensed code from:
@@ -16,13 +16,11 @@ Gratefully borrowed MIT licensed code from:
 * Jermey Voorhis (Gamelan Scheduler)
 * Topher Cyll -- http://www.cyll.org
 
-== Included Libraries
-
-MIDIator
-Gamelan
+h2. Included Libraries
 
 == Gem Dependencies
 
+Midiator
 PriorityQueue
 Highline
 Mislav-Hannah
