@@ -14,7 +14,7 @@ end
 
 puts "\n\n\n"
 puts "Irbivore welcomes you"
-puts "Commands: midiator_start, play"
+puts "Commands: midiator_keys, play, type 'commands' for a full listing"
 Boson.start :libraries => [Irbivore::Livecoding, Irbivore::Config], :verbose => false
 Irbivore::Livecoding.setup
 IRB.start
