@@ -9,7 +9,7 @@ if ARGV[0]
   require ARGV[0];
   ARGV[0] = nil
 else
-  require 'config.rb'
+  require File.expand_path(File.dirname(__FILE__)) + '/config.rb'
 end
 
 puts "\n\n\n"
