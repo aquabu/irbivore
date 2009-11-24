@@ -35,14 +35,18 @@ module Irbivore::Livecoding
       @bpm = 120
     end
 
-    # play midi note
-    # takes note, duration, channel, velocity
+    def config
+      {:commands=>{
+        "midiator_keys"=>{:description=>"Play keyboard like an instrument"},
+        "play"=>{:description=>"Play midi note. Takes note, duration, channel, velocity"}
+      }}
+    end
+
     def play(*args)
       @midi.play *args
       true
     end
 
-    # play keyboard like an instrument
     def midiator_keys
       puts "Play ASCII music. To end type <esc>."
       loop do
