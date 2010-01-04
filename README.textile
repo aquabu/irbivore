@@ -8,8 +8,9 @@ To use.
 - to play middle c (MIDI note 60) type: play 60
 - to enter into note playing mode type: midiator_keys 
 
-h2. Authors
-* Noah Thorp - http://www.aquabu.com
+h2. Contributors 
+* Noah Thorp - http://www.aquabu.com (Original Creator)
+* Gabriel Horner - http://tagaholic.me
 
 Gratefully borrowed MIT licensed code from:
 * Ben Bleything -- ben@bleything.net (MIDIator)
